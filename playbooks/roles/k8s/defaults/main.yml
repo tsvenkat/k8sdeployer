@@ -1,0 +1,15 @@
+---
+# proxy variables
+http_proxy: http://proxy.houston.hpecorp.net:8080/
+https_proxy: http://proxy.houston.hpecorp.net:8080/
+no_proxy: localhost
+
+ssh_user: ubuntu
+ssh_group: ubuntu
+
+machines:
+  - { name: 'master', ip: '10.243.236.32' }
+  - { name: 'worker1', ip: '10.243.236.33' }
+  - { name: 'worker2', ip: '10.243.236.34' }
+  - { name: 'worker3', ip: '10.243.236.35' }
+  - { name: 'worker4', ip: '10.243.236.36' }

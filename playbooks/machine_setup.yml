@@ -1,0 +1,11 @@
+- hosts: master
+  roles:
+    - k8s
+  tasks:
+    - include: roles/k8s/tasks/machinesetup.yml
+
+- hosts: workers
+  roles:
+    - k8s
+  tasks:
+    - include: roles/k8s/tasks/machinesetup.yml

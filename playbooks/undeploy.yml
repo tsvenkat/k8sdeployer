@@ -1,0 +1,83 @@
+---
+- name: Remove kubernetes deployment
+  hosts: resources
+  gather_facts: False
+  vars:
+    proxy_env: 
+      mock: ""
+
+  tasks:
+    - name: include inventory variables
+      include_vars: /inventory.yml
+
+    - name: set proxy vars
+      set_fact:
+        proxy_env:
+          http_proxy: "{{ proxy_info.http_proxy }}"
+          https_proxy: "{{ proxy_info.https_proxy }}"
+          no_proxy: "{{ proxy_info.no_proxy }},{{ machines.master.ip }}"
+      when: proxy_info.use_proxy
+
+    - name: Remove packages
+      become: true
+      apt: >
+        package={{ item }}
+        state=absent
+        update_cache=yes
+      environment: "{{proxy_env}}"
+      with_items:
+        - kubelet
+        - kubeadm
+        - kubectl
+        - kubernetes-cni
+
+    - name: clean up containers, if running
+      become: true
+      shell: 'docker rm -f -v $(docker ps -q)'
+      ignore_errors: true
+
+    - name: remove container mounts
+      become: true
+      shell: 'find /var/lib/kubelet | xargs -n 1 findmnt -n -t tmpfs -o TARGET -T | uniq | xargs -r umount -v'
+      ignore_errors: true
+
+    - name: delete config folder
+      become: true
+      shell: 'rm -r -f /etc/kubernetes /var/lib/kubelet /var/lib/etcd'
+      ignore_errors: true
+
+    - name: remove docker
+      become: true
+      apt: >
+        package=docker-engine
+        state=absent
+        update_cache=yes
+
+    - name: remove docker specific folders
+      become: true
+      ignore_errors: true
+      file: path={{ item }} state=absent
+      with_items:
+        - /etc/docker
+        - /etc/default/docker
+        - /etc/systemd/system/docker.sock
+        - /etc/systemd/system/docker.service
+
+- name: remove local docker-machines
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: include inventory variables
+    include_vars: /inventory.yml
+
+  - name: remove machines
+    ignore_errors: yes
+    shell: docker-machine rm -f {{ machines.master.name }}
+
+  - name: remove workers
+    ignore_errors: yes
+    shell: docker-machine rm -f {{ item.name }}
+    with_items: "{{machines.workers}}"
+   
+
+

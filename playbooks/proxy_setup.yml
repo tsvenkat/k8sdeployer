@@ -1,0 +1,6 @@
+- hosts: all:!localhost
+  roles:
+    - k8s
+
+  tasks:
+    - include: roles/k8s/tasks/proxyconf.yml

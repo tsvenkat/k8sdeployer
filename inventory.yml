@@ -1,0 +1,23 @@
+ssh_info:
+  user: <SETME user to ssh to. usually this will be ubuntu>
+
+proxy_info:
+  use_proxy: no
+  http_proxy: http://<OPTIONAL proxy:port>
+  https_proxy: http://<OPTIONAL proxy:port>
+  no_proxy: localhost
+
+k8s_info:
+  version: v1.4.4
+  token: <SETME run the gen_token.sh script and set the token output here>
+  network_adapter_url: https://git.io/weave-kube
+
+machines:
+  # TODO: add support for multiple masters
+  master:
+    name: master
+    ip: <SETME ip of node you want master installed>
+  workers:
+  - name: worker1
+    ip: <SETME ip of worker node>
+  # add more workers as needed

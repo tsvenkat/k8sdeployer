@@ -1,0 +1,14 @@
+---
+
+- name: include inventory variables
+  include_vars: /inventory.yml
+
+- name: setup docker machines (proxy)
+  shell: 'docker-machine create -d generic  --generic-ip-address={{ ansible_ssh_host }} --generic-ssh-key ~/.ssh/id_rsa --generic-ssh-user {{ ssh_info.user }} --engine-env HTTP_PROXY="{{ proxy_info.http_proxy }}" --engine-env HTTPS_PROXY="{{ proxy_info.https_proxy }}" --engine-env NO_PROXY="{{ proxy_info.no_proxy }}"  {{ inventory_hostname }}'
+  when: proxy_info.use_proxy
+  delegate_to: 127.0.0.1
+
+- name: setup docker machines
+  shell: 'docker-machine create -d generic  --generic-ip-address={{ ansible_ssh_host }} --generic-ssh-key ~/.ssh/id_rsa --generic-ssh-user {{ ssh_info.user }} {{ inventory_hostname }}'
+  when: not proxy_info.use_proxy
+  delegate_to: 127.0.0.1

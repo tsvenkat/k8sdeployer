@@ -1,0 +1,24 @@
+---
+- name: include inventory variables
+  include_vars: /inventory.yml
+
+- name: setup ssh environment for proxy access
+  template:
+    src: "roles/k8s/templates/environment.j2"
+    dest: ~/.ssh/environment
+    mode: 0664
+    owner: "{{ ssh_info.user }}"
+    group: "{{ ssh_info.user }}"
+
+- name: enable using environment vars with ssh
+  become: yes
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    state: present
+    regexp: "^PermitUserEnvironment"
+    line: PermitUserEnvironment yes
+
+- name: restart sshd
+  become: yes
+  service: name=sshd state=restarted
+    

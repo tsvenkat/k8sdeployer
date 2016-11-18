@@ -1,0 +1,137 @@
+---
+- name: Install required k8s packages
+  hosts: resources
+  gather_facts: False
+  vars:
+    proxy_env: 
+      mock: ""
+ 
+  tasks:
+    - name: include inventory variables
+      include_vars: /inventory.yml
+
+    - name: set proxy vars
+      set_fact:
+        proxy_env:
+          http_proxy: "{{ proxy_info.http_proxy }}"
+          https_proxy: "{{ proxy_info.https_proxy }}"
+          no_proxy: "{{ proxy_info.no_proxy }},{{ machines.master.ip }}"
+      when: proxy_info.use_proxy
+
+    - name: Set hostname to IP address first
+      become: true
+      shell: 'hostnamectl set-hostname {{ inventory_hostname }} '
+
+    - name: Get k8s GPG key setup
+      become: true
+      apt_key:
+        url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+        state: present
+      #shell: 'curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -'
+      environment: "{{proxy_env}}"
+ 
+    - name: Update repository to get k8s packages
+      become: true
+      apt_repository: repo='deb http://apt.kubernetes.io/ kubernetes-xenial main' state=present
+ 
+    - name: Install desired packages
+      become: true
+      apt: >
+        package={{ item }}
+        state=present
+        update_cache=yes
+      environment: "{{proxy_env}}"
+      with_items:
+        - kubelet
+        - kubeadm
+        - kubectl
+        - kubernetes-cni
+ 
+    - name: Set properly in /etc/hosts
+      become: true
+      lineinfile: dest=/etc/hosts regexp='^127\.0\.0\.1' line='127.0.0.1 {{ inventory_hostname }}' owner=root group=root mode=0644
+
+- name: Setup up the master
+  hosts: master 
+  gather_facts: False
+  vars:
+    proxy_env: 
+      KUBECONFIG: /etc/kubernetes/admin.conf
+ 
+  tasks:
+    - name: include inventory variables
+      include_vars: /inventory.yml
+
+    - name: set proxy vars
+      set_fact:
+        proxy_env:
+          http_proxy: "{{ proxy_info.http_proxy }}"
+          https_proxy: "{{ proxy_info.https_proxy }}"
+          no_proxy: "{{ proxy_info.no_proxy }},{{ machines.master.ip }}"
+          KUBECONFIG: /etc/kubernetes/admin.conf
+      when: proxy_info.use_proxy
+
+    - name: Run kubeadm init in the master node
+      become: true
+      command: kubeadm init --token={{ k8s_info.token }} init --use-kubernetes-version {{ k8s_info.version }} --api-advertise-addresses={{ ansible_ssh_host }}
+
+    - name: Sleep for 10 seconds before doing networking stuff
+      pause: prompt="Give few seconds for k8s components to initialize..." seconds=10
+
+    - name: Install networking in k8s master node
+      become: true
+      command: kubectl apply -f {{ k8s_info.network_adapter_url }}
+      environment: "{{proxy_env}}"
+
+- name: Setup workers and join the master
+  hosts: workers
+  gather_facts: False
+  vars:
+    proxy_env: 
+      mock: ""
+
+  tasks:
+    - name: include inventory variables
+      include_vars: /inventory.yml
+
+    - name: set proxy vars
+      set_fact:
+        proxy_env:
+          http_proxy: "{{ proxy_info.http_proxy }}"
+          https_proxy: "{{ proxy_info.https_proxy }}"
+          no_proxy: "{{ proxy_info.no_proxy }},{{ machines.master.ip }}"
+      when: proxy_info.use_proxy
+
+    - name: Join the cluster from other nodes
+      become: true
+      command: kubeadm join --token={{ k8s_info.token }} {{ machines.master.ip }}
+      environment: "{{proxy_env}}"
+
+- name: Copy kubelet files from master to local node
+  hosts: master
+  tasks:
+    - name: copy kubectl from master
+      fetch:
+        src: /usr/bin/kubectl
+        dest: /usr/bin/kubectl
+        flat: yes
+      tags: 
+      - kubectl
+
+    - name: copy kubelet.conf from master
+      become: yes
+      fetch:
+        src: /etc/kubernetes/kubelet.conf
+        dest: /kubelet.conf
+        flat: yes
+      tags: 
+      - kubectl
+
+- name: set permission on copied file
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: set file permission
+      file: path=/usr/bin/kubectl mode="u=rwx,g=rx,o=rx"
+      tags: 
+      - kubectl
