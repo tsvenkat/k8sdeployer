@@ -1,4 +1,4 @@
-# k8sdeployer [![Build Status](https://travis-ci.org/tsvenkat/k8sdeployer.svg?branch=master/travis-ci-status.svg)](https://travis-ci.org/tsvenkat/k8sdeployer?branch=master)
+# k8sdeployer [![Build Status](https://travis-ci.org/tsvenkat/k8sdeployer.svg?branch=master)](https://travis-ci.org/tsvenkat/k8sdeployer)
 Setup k8s on existing Ubuntu 16.04 boxes using kubeadm, docker and ansible
 
 # Introduction
