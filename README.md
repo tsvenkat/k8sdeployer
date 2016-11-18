@@ -18,11 +18,15 @@ a k8s developer:
 5. Run the deploy_k8s.sh script to bring up a container with name "deployer" that
    runs a script to setup the k8s deployment and tail the logs. Once this is done,
    it shows the Kubernetes cluster details and the developer could then:
+
     *docker exec -it deployer /bin/bash*
    to shell into the container and start using it. As a convenience, the deployer
    is configured with kubectl and helm tools 
 
-# Requirements:
+# Requirements
 * Git
 * Docker (tested with v1.12.3)
 * Linux shell
+
+# How the deployer works?
+*TBD*
