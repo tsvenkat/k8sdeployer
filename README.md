@@ -28,5 +28,24 @@ a k8s developer:
 * Docker (tested with v1.12.3)
 * Linux shell
 
+# Tip: creating RSA key/pair
+ssh-keygen -t rsa
+
+For a simple dev test, just accept all defaults when prompted. This should create two
+files in your ~/.ssh folder:
+id_rsa     => this is the private key
+id_rsa.pub
+
+# Tip: enabling passwordless access to the Ubuntu boxes using the above keys
+ssh-copy-id <user>@<IP of the Ubuntu box>
+
+when prompted, enter the password. This should copy the public key to the remote box
+to enable passwordless ssh. To verify, do a ssh again:
+
+ssh <user>@IP
+
+# Caveats
+TBD
+
 # How the deployer works?
 *TBD*
