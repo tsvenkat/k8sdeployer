@@ -18,8 +18,14 @@ ansible-playbook -i ../inventory.dat machine_setup.yml
 
 [ $? -ne 0 ] && exit $?
 
+# delete local kubelet.conf
+rm /playbooks/kubelet.conf
+
 # all set to bootstrap
 ansible-playbook -i ../inventory.dat bootstrap.yml
+
+# run devenv playbook to patch k8s and install helm repo
+ansible-playbook -i ../inventory.dat devenv.yml
 
 # if all went well, the kubectl command should list something useful
 echo "Kubernetes setup is complete"

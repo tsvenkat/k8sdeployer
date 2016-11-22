@@ -1,0 +1,29 @@
+- name: Prepare the container to use for development/workload deployment
+  hosts: localhost
+  connection: local
+  vars:
+    proxy_env:
+      KUBECONFIG: /playbooks/kubelet.conf
+
+  tasks:
+  - name: include inventory variables
+    include_vars: /inventory.yml
+
+  - name: set proxy vars
+    set_fact:
+      proxy_env:
+        http_proxy: "{{ proxy_info.http_proxy }}"
+        https_proxy: "{{ proxy_info.https_proxy }}"
+        no_proxy: "{{ proxy_info.no_proxy }},{{ machines.master.ip }}"
+    when: proxy_info.use_proxy
+
+  - name: init helm repo
+    become: yes
+    shell: helm init
+    environment: "{{proxy_env}}"
+
+  - name: add the fabric8 repo
+    become: yes
+    shell: helm update && helm repo add fabric8 https://fabric8.io/helm/ 
+    environment: "{{proxy_env}}"
+       

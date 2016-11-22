@@ -78,6 +78,13 @@
     ignore_errors: yes
     shell: docker-machine rm -f {{ item.name }}
     with_items: "{{machines.workers}}"
+
+  - name: remove machines and certs
+    ignore_errors: yes
+    file: path={{ item }} state=absent
+    with_items:
+      - ~/.docker/machine/certs
+      - ~/.docker/machine/machines
    
 
 

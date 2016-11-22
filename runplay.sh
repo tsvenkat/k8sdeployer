@@ -1,14 +1,12 @@
 #!/bin/sh
 
-#docker rm -f deployer_shell > /dev/null 2>&1
+docker rm -f deployer_shell > /dev/null 2>&1
 
-# make sure the helion/k8sdeployer images is built
 ./build.sh
 
 # setup a docker container that abstracts the steps required to
 # setup a k8s cluster
-#docker run -it --name deployer_shell -h DEPLOYER\
-docker run -it --rm -h DEPLOYER\
+docker run -it --name deployer_shell -h DEPLOYER\
        -v /var/run/docker.sock:/var/run/docker.sock\
        -v `pwd`/docker-machine-conf:/root/.docker/machine\
        -v `pwd`/ssh_config:/root/.ssh\
@@ -21,4 +19,4 @@ docker run -it --rm -h DEPLOYER\
        -e http_proxy=$http_proxy\
        -e https_proxy=$https_proxy\
        -e no_proxy=$(grep no_proxy inventory.yml | cut -d":" -f2)\
-       --entrypoint $( [ $# -eq 0 ] && echo /bin/bash || echo ansible) localhost/k8sdeployer $( [ $# -ne 0 ] && echo "-i /inventory.dat") $@
+       --entrypoint ansible-playbook localhost/k8sdeployer -i /inventory.dat $@

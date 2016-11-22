@@ -20,7 +20,12 @@
 
     - name: Set hostname to IP address first
       become: true
-      shell: 'hostnamectl set-hostname {{ inventory_hostname }} '
+      shell: 'hostnamectl set-hostname {{ ansible_ssh_host }} '
+
+    #- name: Set properly in /etc/hosts
+    #  become: true
+    #  shell: hostnamectl set-hostname {{ ansible_ssh_host }}
+    #  #lineinfile: dest=/etc/hosts regexp='^127\.0\.0\.1' line='127.0.0.1 {{ ansible_ssh_host }}' owner=root group=root mode=0644
 
     - name: Get k8s GPG key setup
       become: true
@@ -42,22 +47,44 @@
         update_cache=yes
       environment: "{{proxy_env}}"
       with_items:
+        - jq
         - kubelet
         - kubeadm
         - kubectl
         - kubernetes-cni
  
-    - name: Set properly in /etc/hosts
+
+    - name: Configure kubelet to use the correct IP
       become: true
-      lineinfile: dest=/etc/hosts regexp='^127\.0\.0\.1' line='127.0.0.1 {{ inventory_hostname }}' owner=root group=root mode=0644
+      lineinfile: dest=/etc/systemd/system/kubelet.service.d/10-kubeadm.conf regexp='KUBELET_EXTRA_ARGS=' line='Environment="KUBELET_EXTRA_ARGS=--v=4 --node-ip={{ ansible_ssh_host }}"'
+
+    - name: restart kubelet for changes to take effect
+      become: yes
+      service: name=kubelet state=restarted
+
 
 - name: Setup up the master
   hosts: master 
   gather_facts: False
-  vars:
-    proxy_env: 
-      KUBECONFIG: /etc/kubernetes/admin.conf
+  environment:
+    mock: ""
+    no_proxy: localhost,{{ ansible_ssh_host }}
  
+  tasks:
+    - debug:
+        msg: "no_proxy=localhost,{{ ansible_ssh_host }} kubeadm init --token={{ k8s_info.token }} --use-kubernetes-version {{ k8s_info.version }} --api-advertise-addresses={{ ansible_ssh_host }}"
+
+    - name: Run kubeadm init in the master node
+      become: true
+      command: kubeadm init --token={{ k8s_info.token }} --use-kubernetes-version {{ k8s_info.version }} --api-advertise-addresses={{ ansible_ssh_host }}
+      #note: do not use proxy!
+
+- name: Setup up the master
+  hosts: master
+  gather_facts: False
+  vars:
+    proxy_env:
+      KUBECONFIG: /etc/kubernetes/admin.conf
   tasks:
     - name: include inventory variables
       include_vars: /inventory.yml
@@ -71,16 +98,21 @@
           KUBECONFIG: /etc/kubernetes/admin.conf
       when: proxy_info.use_proxy
 
-    - name: Run kubeadm init in the master node
-      become: true
-      command: kubeadm init --token={{ k8s_info.token }} init --use-kubernetes-version {{ k8s_info.version }} --api-advertise-addresses={{ ansible_ssh_host }}
-
     - name: Sleep for 10 seconds before doing networking stuff
       pause: prompt="Give few seconds for k8s components to initialize..." seconds=10
 
+    #- debug:
+    #    msg: "no_proxy=localhost,{{ ansible_ssh_host }} kubeadm init --token={{ k8s_info.token }} --use-kubernetes-version {{ k8s_info.version }} --api-advertise-addresses={{ ansible_ssh_host }}"
+
+    - name: patch kube-proxy. Refer: https://github.com/kubernetes/kubernetes/issues/34101 
+      become: yes
+      #shell: "kubectl -n kube-system get ds -l 'component=kube-proxy' -o json | jq '.items[0].spec.template.spec.containers[0].command |= .+ [\"--proxy-mode=userspace\"]' | kubectl apply -f - && kubectl -n kube-system delete pods -l 'component=kube-proxy'"
+      shell: "kubectl -n kube-system get ds -l 'component=kube-proxy' -o json | jq '.items[0].spec.template.spec.containers[0].command |= .+ [\"--cluster-cidr=10.32.0.0/12\"]' | kubectl apply --validate=false -f - && kubectl -n kube-system delete pods -l 'component=kube-proxy'"
+      environment: "{{proxy_env}}"
+
     - name: Install networking in k8s master node
       become: true
-      command: kubectl apply -f {{ k8s_info.network_adapter_url }}
+      shell: kubectl apply -f {{ k8s_info.network_adapter_url }}
       environment: "{{proxy_env}}"
 
 - name: Setup workers and join the master
@@ -107,31 +139,14 @@
       command: kubeadm join --token={{ k8s_info.token }} {{ machines.master.ip }}
       environment: "{{proxy_env}}"
 
-- name: Copy kubelet files from master to local node
+- name: Copy kubelet config file from master to local node
   hosts: master
   tasks:
-    - name: copy kubectl from master
-      fetch:
-        src: /usr/bin/kubectl
-        dest: /usr/bin/kubectl
-        flat: yes
-      tags: 
-      - kubectl
-
     - name: copy kubelet.conf from master
       become: yes
       fetch:
         src: /etc/kubernetes/kubelet.conf
-        dest: /kubelet.conf
+        dest: /playbooks/kubelet.conf
         flat: yes
-      tags: 
-      - kubectl
-
-- name: set permission on copied file
-  hosts: localhost
-  connection: local
-  tasks:
-    - name: set file permission
-      file: path=/usr/bin/kubectl mode="u=rwx,g=rx,o=rx"
       tags: 
       - kubectl

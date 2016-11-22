@@ -1,6 +1,6 @@
-http_proxy={{ http_proxy }}
-https_proxy={{ https_proxy }}
-no_proxy=localhost
-HTTP_PROXY={{ http_proxy }}
-HTTPS_PROXY={{ https_proxy }}
-NO_PROXY=localhost
+http_proxy={{ proxy_info.http_proxy }}
+https_proxy={{ proxy_info.https_proxy }}
+no_proxy=localhost,{{ ansible_ssh_host }},{{ proxy_info.no_proxy }}
+HTTP_PROXY={{ proxy_info.http_proxy }}
+HTTPS_PROXY={{ proxy_info.https_proxy }}
+NO_PROXY=localhost,{{ ansible_ssh_host }},{{ proxy_info.no_proxy }}
