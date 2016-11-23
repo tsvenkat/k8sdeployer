@@ -1,0 +1,5 @@
+.vagrant
+.docker
+env.dat
+inventory.dat
+ssh_config/

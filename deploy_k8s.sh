@@ -1,8 +1,12 @@
 #!/bin/sh
 
-# check if vagrant up needs to be called
-vagrant status | grep "not created" -q
-[ $? -eq 0 ] && vagrant up
+# check if using Vagrant
+grep -q "^\s*use_vagrant:\s*yes" inventory.yml
+if [ $? -eq 0 ]; then
+  # check if vagrant up needs to be called
+  vagrant status | grep "not created" -q
+  [ $? -eq 0 ] && echo "Using vagrant to bring up VMs..." && vagrant up
+fi
 
 # build the deployer image first
 ./build.sh
@@ -19,9 +23,7 @@ docker run -itd --name deployer -h DEPLOYER\
        -v `pwd`/scripts:/scripts\
        -v `pwd`/helm_repo:/root/.helm/repository\
        -e KUBECONFIG=/playbooks/kubelet.conf\
-       -e http_proxy=$http_proxy\
-       -e https_proxy=$https_proxy\
-       -e no_proxy=$(grep no_proxy inventory.yml | cut -d":" -f2)\
+       --env-file env.dat\
        --entrypoint /bin/bash localhost/k8sdeployer
 
 [ $? -ne 0 ] && exit $?

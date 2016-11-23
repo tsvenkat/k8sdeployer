@@ -9,6 +9,8 @@
 # setup a k8s cluster
 #docker run -it --name deployer_shell -h DEPLOYER\
 docker run -it --rm -h DEPLOYER\
+       --network=host\
+       -p 9200:9200 -p 5601:5601\
        -v /var/run/docker.sock:/var/run/docker.sock\
        -v `pwd`/docker-machine-conf:/root/.docker/machine\
        -v `pwd`/ssh_config:/root/.ssh\
@@ -18,7 +20,5 @@ docker run -it --rm -h DEPLOYER\
        -v `pwd`/scripts:/scripts\
        -v `pwd`/helm_repo:/root/.helm/repository\
        -e KUBECONFIG=/playbooks/kubelet.conf\
-       -e http_proxy=$http_proxy\
-       -e https_proxy=$https_proxy\
-       -e no_proxy=$(grep no_proxy inventory.yml | cut -d":" -f2)\
+       --env-file env.dat\
        --entrypoint $( [ $# -eq 0 ] && echo /bin/bash || echo ansible) localhost/k8sdeployer $( [ $# -ne 0 ] && echo "-i /inventory.dat") $@

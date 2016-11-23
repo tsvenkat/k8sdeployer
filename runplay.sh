@@ -16,7 +16,5 @@ docker run -it --name deployer_shell -h DEPLOYER\
        -v `pwd`/scripts:/scripts\
        -v `pwd`/helm_repo:/root/.helm/repository\
        -e KUBECONFIG=/playbooks/kubelet.conf\
-       -e http_proxy=$http_proxy\
-       -e https_proxy=$https_proxy\
-       -e no_proxy=$(grep no_proxy inventory.yml | cut -d":" -f2)\
+       --env-file env.dat\
        --entrypoint ansible-playbook localhost/k8sdeployer -i /inventory.dat $@

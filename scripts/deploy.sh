@@ -19,7 +19,7 @@ ansible-playbook -i ../inventory.dat machine_setup.yml
 [ $? -ne 0 ] && exit $?
 
 # delete local kubelet.conf
-rm /playbooks/kubelet.conf
+rm /playbooks/kubelet.conf > /dev/null 2>&1
 
 # all set to bootstrap
 ansible-playbook -i ../inventory.dat bootstrap.yml

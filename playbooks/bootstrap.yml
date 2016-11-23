@@ -104,7 +104,7 @@
     #- debug:
     #    msg: "no_proxy=localhost,{{ ansible_ssh_host }} kubeadm init --token={{ k8s_info.token }} --use-kubernetes-version {{ k8s_info.version }} --api-advertise-addresses={{ ansible_ssh_host }}"
 
-    - name: patch kube-proxy. Refer: https://github.com/kubernetes/kubernetes/issues/34101 
+    - name: "Patch kube-proxy. Refer: https://github.com/kubernetes/kubernetes/issues/34101"
       become: yes
       #shell: "kubectl -n kube-system get ds -l 'component=kube-proxy' -o json | jq '.items[0].spec.template.spec.containers[0].command |= .+ [\"--proxy-mode=userspace\"]' | kubectl apply -f - && kubectl -n kube-system delete pods -l 'component=kube-proxy'"
       shell: "kubectl -n kube-system get ds -l 'component=kube-proxy' -o json | jq '.items[0].spec.template.spec.containers[0].command |= .+ [\"--cluster-cidr=10.32.0.0/12\"]' | kubectl apply --validate=false -f - && kubectl -n kube-system delete pods -l 'component=kube-proxy'"
