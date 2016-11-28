@@ -19,3 +19,4 @@ if [ $? -eq 0 ]; then
   echo https_proxy=$(grep https_proxy inventory.yml | cut -d":" -f2- | tr -d ' ') >> env.dat
   echo no_proxy=$(grep no_proxy inventory.yml | cut -d":" -f2- | tr -d ' ') >> env.dat
 fi
+echo weave_token=$(grep weave_token inventory.yml | cut -d":" -f2 | tr -d ' ') >> env.dat

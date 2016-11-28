@@ -1,0 +1,1140 @@
+apiVersion: v1
+entries:
+  drupal:
+  - created: 2016-11-23T18:48:21.090418982Z
+    description: One of the most versatile open source content management systems.
+    digest: 3596f47c5dcaa7a975d1c4cb7bf7ef6790c9ad8dda41a5a329e30c1ea8a40d11
+    engine: gotpl
+    home: http://www.drupal.org/
+    keywords:
+    - drupal
+    - cms
+    - blog
+    - http
+    - web
+    - application
+    - php
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: drupal
+    sources:
+    - https://github.com/bitnami/bitnami-docker-drupal
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/drupal-0.3.8.tgz
+    version: 0.3.8
+  - created: 2016-11-21T19:48:21.904806991Z
+    description: One of the most versatile open source content management systems.
+    digest: 78b2bb3717be63dccb02ea06b711ca7cf7869848b296b880099c6264e86d86d3
+    engine: gotpl
+    home: http://www.drupal.org/
+    keywords:
+    - drupal
+    - cms
+    - blog
+    - http
+    - web
+    - application
+    - php
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: drupal
+    sources:
+    - https://github.com/bitnami/bitnami-docker-drupal
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/drupal-0.3.7.tgz
+    version: 0.3.7
+  - created: 2016-11-08T15:03:20.739400722Z
+    description: One of the most versatile open source content management systems.
+    digest: 5508b29e20a5d609f76319869774f008dcc4bed13bbbc7ed40546bc9af8c7cd7
+    engine: gotpl
+    home: http://www.drupal.org/
+    keywords:
+    - drupal
+    - cms
+    - blog
+    - http
+    - web
+    - application
+    - php
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: drupal
+    sources:
+    - https://github.com/bitnami/bitnami-docker-drupal
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/drupal-0.3.6.tgz
+    version: 0.3.6
+  - created: 2016-11-03T19:33:29.11780736Z
+    description: One of the most versatile open source content management systems.
+    digest: 023a282c93f8411fb81bb4fff7820c1337aad0586ccf7dae55bdbed515ad8b05
+    engine: gotpl
+    home: http://www.drupal.org/
+    keywords:
+    - drupal
+    - cms
+    - blog
+    - http
+    - web
+    - application
+    - php
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: drupal
+    sources:
+    - https://github.com/bitnami/bitnami-docker-drupal
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/drupal-0.3.5.tgz
+    version: 0.3.5
+  - created: 2016-10-21T19:18:18.619010562Z
+    description: One of the most versatile open source content management systems.
+    digest: 9bdaa53f7a9e82c9b32c7ac9b34b84fd142671732a54423a2dcdc893c4162801
+    engine: gotpl
+    home: http://www.drupal.org/
+    keywords:
+    - drupal
+    - cms
+    - blog
+    - http
+    - web
+    - application
+    - php
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: drupal
+    sources:
+    - https://github.com/bitnami/bitnami-docker-drupal
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/drupal-0.3.4.tgz
+    version: 0.3.4
+  - created: 2016-10-19T00:03:14.027652488Z
+    description: One of the most versatile open source content management systems.
+    digest: 25650526abc1036398dbb314d77a0062cbb644b2c5791a258fb863fdaad5093d
+    engine: gotpl
+    home: http://www.drupal.org/
+    keywords:
+    - drupal
+    - cms
+    - blog
+    - http
+    - web
+    - application
+    - php
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: drupal
+    sources:
+    - https://github.com/bitnami/bitnami-docker-drupal
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/drupal-0.3.3.tgz
+    version: 0.3.3
+  - created: 2016-10-19T00:03:14.027073479Z
+    description: One of the most versatile open source content management systems.
+    digest: 13d5d32d316c08359221d230004dd2adc0152362e87abcc0d61ea191241fa69f
+    engine: gotpl
+    home: http://www.drupal.org/
+    keywords:
+    - drupal
+    - cms
+    - blog
+    - http
+    - web
+    - application
+    - php
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: drupal
+    sources:
+    - https://github.com/bitnami/bitnami-docker-drupal
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/drupal-0.3.2.tgz
+    version: 0.3.2
+  - created: 2016-10-19T00:03:14.025451665Z
+    description: One of the most versatile open source content management systems.
+    digest: b3f09ecd191f8c06275c96d9af4d77a97c94355525864201e9baf151b17bd5a7
+    engine: gotpl
+    home: http://www.drupal.org/
+    keywords:
+    - drupal
+    - cms
+    - blog
+    - http
+    - web
+    - application
+    - php
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: drupal
+    sources:
+    - https://github.com/bitnami/bitnami-docker-drupal
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/drupal-0.3.1.tgz
+    version: 0.3.1
+  - created: 2016-10-19T00:03:14.024557743Z
+    description: One of the most versatile open source content management systems.
+    digest: c56fc55b93b0dead65af7b81bbd54befd5115860698ca475baa5acb178a12e5a
+    engine: gotpl
+    home: http://www.drupal.org/
+    keywords:
+    - drupal
+    - cms
+    - blog
+    - http
+    - web
+    - application
+    - php
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: drupal
+    sources:
+    - https://github.com/bitnami/bitnami-docker-drupal
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/drupal-0.3.0.tgz
+    version: 0.3.0
+  factorio:
+  - created: 2016-11-23T18:48:21.091095783Z
+    description: Factorio dedicated server.
+    digest: 7a9599d0fb1b252785b8cda9ccc4a4f2381986016918b87b1bd5e8c27e4efc4c
+    keywords:
+    - game
+    - server
+    maintainers:
+    - email: gtaylor@gc-taylor.com
+      name: Greg Taylor
+    name: factorio
+    sources:
+    - https://github.com/games-on-k8s/docker-factorio
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/factorio-0.1.1.tgz
+    version: 0.1.1
+  - created: 2016-11-07T18:33:21.243890443Z
+    description: Factorio dedicated server.
+    digest: 8edc1340cd99225a769b5843a677896c0d54a079133f9759211a1839bc7bb3eb
+    keywords:
+    - game
+    - server
+    maintainers:
+    - email: gtaylor@gc-taylor.com
+      name: Greg Taylor
+    name: factorio
+    sources:
+    - https://github.com/games-on-k8s/docker-factorio
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/factorio-0.1.0.tgz
+    version: 0.1.0
+  ghost:
+  - created: 2016-11-23T18:48:21.092513663Z
+    description: A simple, powerful publishing platform that allows you to share your
+      stories with the world
+    digest: 804227af037082a0f5c3c579feb9e24eb3682449e78876971c93a109bc716f40
+    engine: gotpl
+    home: http://www.ghost.org/
+    keywords:
+    - ghost
+    - blog
+    - http
+    - web
+    - application
+    - nodejs
+    - javascript
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: ghost
+    sources:
+    - https://github.com/bitnami/bitnami-docker-ghost
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/ghost-0.4.0.tgz
+    version: 0.4.0
+  jenkins:
+  - created: 2016-11-23T18:48:21.092967075Z
+    description: A Jenkins Helm chart for Kubernetes.
+    digest: 82b53a4c90ac2cf71bb41d870939ce1e980192e1407ba8825051c0ed98c04906
+    home: https://jenkins.io/
+    icon: https://wiki.jenkins-ci.org/download/attachments/2916393/logo.png
+    maintainers:
+    - email: lachlan@deis.com
+      name: Lachlan Evenson
+    - email: viglesias@google.com
+      name: Vic Iglesias
+    name: jenkins
+    sources:
+    - https://github.com/jenkinsci/jenkins
+    - https://github.com/jenkinsci/docker-jnlp-slave
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/jenkins-0.1.1.tgz
+    version: 0.1.1
+  - created: 2016-10-19T00:03:14.028672648Z
+    description: A Jenkins Helm chart for Kubernetes.
+    digest: ea97fbfeaf9b9701d71dbc2b6fa50bff25a33f0565233d81170a6ac225d22ab4
+    home: https://jenkins.io/
+    icon: https://wiki.jenkins-ci.org/download/attachments/2916393/logo.png
+    maintainers:
+    - email: lachlan@deis.com
+      name: Lachlan Evenson
+    - email: viglesias@google.com
+      name: Vic Iglesias
+    name: jenkins
+    sources:
+    - https://github.com/jenkinsci/jenkins
+    - https://github.com/jenkinsci/docker-jnlp-slave
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/jenkins-0.1.0.tgz
+    version: 0.1.0
+  joomla:
+  - created: 2016-11-23T18:48:21.093618402Z
+    description: PHP content management system (CMS) for publishing web content
+    digest: 0a01ea051ec15274932c8d82076c1a9fd62584b0fb916a81372319bef223c20e
+    engine: gotpl
+    home: http://www.joomla.org/
+    keywords:
+    - joomla
+    - cms
+    - blog
+    - http
+    - php
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: joomla
+    sources:
+    - https://github.com/bitnami/bitnami-docker-joomla
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/joomla-0.4.0.tgz
+    version: 0.4.0
+  mariadb:
+  - created: 2016-11-23T18:48:21.094016671Z
+    description: Chart for MariaDB
+    digest: c6b73c5146d085a202f838741526fe5fdc2fae55b8f5f17c0c42fd195c65311f
+    engine: gotpl
+    home: https://mariadb.org
+    keywords:
+    - mariadb
+    - mysql
+    - database
+    - sql
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: mariadb
+    sources:
+    - https://github.com/bitnami/bitnami-docker-mariadb
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/mariadb-0.5.4.tgz
+    version: 0.5.4
+  - created: 2016-11-23T00:33:20.016012859Z
+    description: Chart for MariaDB
+    digest: 38786f4f6fe4fb7a2dcbc38aa0bfea72e40e4d9766e1679942af60e25b5ba9bd
+    engine: gotpl
+    home: https://mariadb.org
+    keywords:
+    - mariadb
+    - mysql
+    - database
+    - sql
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: mariadb
+    sources:
+    - https://github.com/bitnami/bitnami-docker-mariadb
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/mariadb-0.5.3.tgz
+    version: 0.5.3
+  - created: 2016-11-03T19:33:29.120356141Z
+    description: Chart for MariaDB
+    digest: 8eb24c65fbdb75711a8ffd8f8f6ed206951cdc3a24d74a355121bc11c6c02f3b
+    engine: gotpl
+    home: https://mariadb.org
+    keywords:
+    - mariadb
+    - mysql
+    - database
+    - sql
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: mariadb
+    sources:
+    - https://github.com/bitnami/bitnami-docker-mariadb
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/mariadb-0.5.2.tgz
+    version: 0.5.2
+  - created: 2016-10-19T00:03:14.031007257Z
+    description: Chart for MariaDB
+    digest: 6544dbf62586f570762a3a469f0086fe595379454fb46a53d001206a0e282268
+    engine: gotpl
+    home: https://mariadb.org
+    keywords:
+    - mariadb
+    - mysql
+    - database
+    - sql
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: mariadb
+    sources:
+    - https://github.com/bitnami/bitnami-docker-mariadb
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/mariadb-0.5.1.tgz
+    version: 0.5.1
+  - created: 2016-10-19T00:03:14.030598543Z
+    description: Chart for MariaDB
+    digest: c9f67f8140b3e7243d479f819d4ec8b2e992ee462b8fa579b920e86066955312
+    engine: gotpl
+    home: https://mariadb.org
+    keywords:
+    - mariadb
+    - mysql
+    - database
+    - sql
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: mariadb
+    sources:
+    - https://github.com/bitnami/bitnami-docker-mariadb
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/mariadb-0.5.0.tgz
+    version: 0.5.0
+  - created: 2016-10-19T00:03:14.03012509Z
+    description: Chart for MariaDB
+    digest: fe8adb0730567ad8cd63501ac18b178ec2a9a590d43dd7ad91fd2d5fcf6114be
+    engine: gotpl
+    home: https://mariadb.org
+    keywords:
+    - mariadb
+    - mysql
+    - database
+    - sql
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: mariadb
+    sources:
+    - https://github.com/bitnami/bitnami-docker-mariadb
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/mariadb-0.4.0.tgz
+    version: 0.4.0
+  - created: 2016-10-19T00:03:14.029775557Z
+    description: Chart for MariaDB
+    digest: 47fe08909187da025e7e86e9534a736df11e2629c5c123178113fe776992e9e7
+    engine: gotpl
+    home: https://mariadb.org
+    keywords:
+    - mariadb
+    - mysql
+    - database
+    - sql
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: mariadb
+    sources:
+    - https://github.com/bitnami/bitnami-docker-mariadb
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/mariadb-0.3.1.tgz
+    version: 0.3.1
+  - created: 2016-10-19T00:03:14.02942396Z
+    description: Chart for MariaDB
+    digest: 7354d2672b3983e98fe5c31d96d2c3d9c73edefe642eb5e1981484804315c4bc
+    engine: gotpl
+    home: https://mariadb.org
+    keywords:
+    - mariadb
+    - mysql
+    - database
+    - sql
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: mariadb
+    sources:
+    - https://github.com/bitnami/bitnami-docker-mariadb
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/mariadb-0.3.0.tgz
+    version: 0.3.0
+  mediawiki:
+  - created: 2016-11-23T18:48:21.094706642Z
+    description: Extremely powerful, scalable software and a feature-rich wiki implementation
+      that uses PHP to process and display data stored in a database.
+    digest: 9617f13f51f5bb016a072f2a026c627420721a1c5b7cd22f32d6cd0c90f34eda
+    engine: gotpl
+    home: http://www.mediawiki.org/
+    keywords:
+    - mediawiki
+    - wiki
+    - http
+    - php
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: mediawiki
+    sources:
+    - https://github.com/bitnami/bitnami-docker-mediawiki
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/mediawiki-0.4.0.tgz
+    version: 0.4.0
+  memcached:
+  - created: 2016-11-23T18:48:21.095022021Z
+    description: Chart for Memcached
+    digest: 2b918dd8129a9d706e58b3de459004e3367c05a162d3e3cdb031cb6818d5f820
+    engine: gotpl
+    home: http://memcached.org/
+    keywords:
+    - memcached
+    - cache
+    maintainers:
+    - email: gtaylor@gc-taylor.com
+      name: Greg Taylor
+    name: memcached
+    sources:
+    - https://github.com/docker-library/memcached
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/memcached-0.4.0.tgz
+    version: 0.4.0
+  minecraft:
+  - created: 2016-11-23T18:48:21.09551534Z
+    description: Minecraft server
+    digest: 2cd423a28eb8a0186fba171cc17dcbe6f5a53d1a99e4078f9713afed3b61cce6
+    keywords:
+    - game
+    - server
+    maintainers:
+    - email: gtaylor@gc-taylor.com
+      name: Greg Taylor
+    name: minecraft
+    sources:
+    - https://hub.docker.com/r/itzg/minecraft-server/~/dockerfile/
+    - https://github.com/itzg/dockerfiles
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/minecraft-0.1.0.tgz
+    version: 0.1.0
+  mongodb:
+  - created: 2016-11-23T18:48:21.09592782Z
+    description: Chart for MongoDB
+    digest: d5eabbe99b03b4f7f71c461580564e3d965c2602bfd1be4dd09f1c54c8e7e9db
+    engine: gotpl
+    home: https://mongodb.org
+    keywords:
+    - mongodb
+    - database
+    - nosql
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: mongodb
+    sources:
+    - https://github.com/bitnami/bitnami-docker-mongodb
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/mongodb-0.4.0.tgz
+    version: 0.4.0
+  mysql:
+  - created: 2016-11-23T18:48:21.096310666Z
+    description: Chart for MySQL
+    digest: 3dd20c2ed2faf64b9f940e813b18d7fa1c18c1b86101de453c7c836940e05680
+    engine: gotpl
+    home: https://www.mysql.com/
+    keywords:
+    - mysql
+    - database
+    - sql
+    maintainers:
+    - email: viglesias@google.com
+      name: Vic Iglesias
+    name: mysql
+    sources:
+    - https://github.com/kubernetes/charts
+    - https://github.com/docker-library/mysql
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/mysql-0.2.1.tgz
+    version: 0.2.1
+  - created: 2016-11-04T14:18:20.013918541Z
+    description: Chart for MySQL
+    digest: 9723417e4d71713ed87b701eff52a1a74abea64c3cf852833b1e9bb96ff6fd55
+    engine: gotpl
+    home: https://www.mysql.com/
+    keywords:
+    - mysql
+    - database
+    - sql
+    maintainers:
+    - email: viglesias@google.com
+      name: Vic Iglesias
+    name: mysql
+    sources:
+    - https://github.com/kubernetes/charts
+    - https://github.com/docker-library/mysql
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/mysql-0.2.0.tgz
+    version: 0.2.0
+  - created: 2016-11-03T03:18:19.715713217Z
+    description: Chart for MySQL
+    digest: fef93423760265f8bb3aedf9a922ed0169e018071ea467f22c17527006ae6a60
+    engine: gotpl
+    home: https://www.mysql.com/
+    keywords:
+    - mysql
+    - database
+    - sql
+    maintainers:
+    - email: viglesias@google.com
+      name: Vic Iglesias
+    name: mysql
+    sources:
+    - https://github.com/kubernetes/charts
+    - https://github.com/docker-library/mysql
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/mysql-0.1.2.tgz
+    version: 0.1.2
+  - created: 2016-10-19T18:33:14.866729383Z
+    description: Chart for MySQL
+    digest: 3cb4495336e12d4fea28a1f7e3f02bbb18249582227866088cf6ac89587a2527
+    engine: gotpl
+    home: https://www.mysql.com/
+    keywords:
+    - mysql
+    - database
+    - sql
+    maintainers:
+    - email: viglesias@google.com
+      name: Vic Iglesias
+    name: mysql
+    sources:
+    - https://github.com/kubernetes/charts
+    - https://github.com/docker-library/mysql
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/mysql-0.1.1.tgz
+    version: 0.1.1
+  - created: 2016-10-19T00:03:14.031801762Z
+    description: Chart for MySQL
+    digest: cba3eff1710520dbfbbeca2b0f9a754e0ddc172eb83ce51211606387955a6572
+    engine: gotpl
+    home: https://www.mysql.com/
+    keywords:
+    - mysql
+    - database
+    - sql
+    maintainers:
+    - email: viglesias@google.com
+      name: Vic Iglesias
+    name: mysql
+    sources:
+    - https://github.com/kubernetes/charts
+    - https://github.com/docker-library/mysql
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/mysql-0.1.0.tgz
+    version: 0.1.0
+  owncloud:
+  - created: 2016-11-23T18:48:21.096781278Z
+    description: A file sharing server that puts the control and security of your
+      own data back into your hands.
+    digest: 7ec2dfe27bf42e8ee2e0672964decc2fbec94ec4fb60af2f3e9e91e13fdae08a
+    engine: gotpl
+    home: https://owncloud.org/
+    keywords:
+    - owncloud
+    - storage
+    - http
+    - web
+    - php
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: owncloud
+    sources:
+    - https://github.com/bitnami/bitnami-docker-owncloud
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/owncloud-0.4.0.tgz
+    version: 0.4.0
+  phpbb:
+  - created: 2016-11-23T18:48:21.098895445Z
+    description: Community forum that supports the notion of users and groups, file
+      attachments, full-text search, notifications and more.
+    digest: 7e5e8828fdbba9ebc83c95baac4937e569e881d8b68bc79974a0f5d8a2883e13
+    engine: gotpl
+    home: https://www.phpbb.com/
+    keywords:
+    - phpbb
+    - forum
+    - http
+    - php
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: phpbb
+    sources:
+    - https://github.com/bitnami/bitnami-docker-phpbb
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/phpbb-0.4.0.tgz
+    version: 0.4.0
+  postgresql:
+  - created: 2016-11-23T18:48:21.099307439Z
+    description: Chart for PostgreSQL
+    digest: 194c52de318d03d4e3ffd91dd7ea9246d70e79c82169e108b54e729bfb2da750
+    engine: gotpl
+    home: https://www.postgresql.org/
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    maintainers:
+    - name: swordbeta
+    name: postgresql
+    sources:
+    - https://github.com/kubernetes/charts
+    - https://github.com/docker-library/postgres
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/postgresql-0.2.0.tgz
+    version: 0.2.0
+  - created: 2016-11-08T15:03:20.745475633Z
+    description: Chart for PostgreSQL
+    digest: c79411d63ad872d0f6d034de9818cef565dbde3ac5f018ee8349305f286031a8
+    engine: gotpl
+    home: https://www.postgresql.org/
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    maintainers:
+    - name: swordbeta
+    name: postgresql
+    sources:
+    - https://github.com/kubernetes/charts
+    - https://github.com/docker-library/postgres
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/postgresql-0.1.1.tgz
+    version: 0.1.1
+  - created: 2016-11-04T14:18:20.014925806Z
+    description: Chart for PostgreSQL
+    digest: c984e3efb97da1b841c6a07b1e8fd32638b59de42e5b062690b8c9956be58959
+    engine: gotpl
+    home: https://www.postgresql.org/
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    maintainers:
+    - name: swordbeta
+    name: postgresql
+    sources:
+    - https://github.com/kubernetes/charts
+    - https://github.com/docker-library/postgres
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/postgresql-0.1.0.tgz
+    version: 0.1.0
+  prometheus:
+  - created: 2016-11-23T18:48:21.099934321Z
+    description: A Prometheus Helm chart for Kubernetes. Prometheus is a monitoring
+      system and time series database.
+    digest: bf41a211b83232c3121eee0c22f696eded0d61ce71d0813c8141a56e12ea6f74
+    engine: gotpl
+    home: https://prometheus.io/
+    maintainers:
+    - email: mgoodness@gmail.com
+      name: Michael Goodness
+    name: prometheus
+    sources:
+    - https://github.com/prometheus/alertmanager
+    - https://github.com/prometheus/prometheus
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/prometheus-1.3.1.tgz
+    version: 1.3.1
+  rabbitmq:
+  - created: 2016-11-23T18:48:21.100295967Z
+    description: Open source message broker software that implements the Advanced
+      Message Queuing Protocol (AMQP)
+    digest: 1fd981e8c99ade1857844139d4177be6220b375adb37c3ce7737e92dc3ad0678
+    engine: gotpl
+    home: https://www.rabbitmq.com
+    keywords:
+    - rabbitmq
+    - message queue
+    - AMQP
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: rabbitmq
+    sources:
+    - https://github.com/bitnami/bitnami-docker-rabbitmq
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/rabbitmq-0.4.0.tgz
+    version: 0.4.0
+  redis:
+  - created: 2016-11-23T18:48:21.100612213Z
+    description: Chart for Redis
+    digest: 7132d9ddecaf4a890e5177c401228fa031f52e927393063f8d6c5a0881b281a3
+    engine: gotpl
+    home: http://redis.io/
+    keywords:
+    - redis
+    - keyvalue
+    - database
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: redis
+    sources:
+    - https://github.com/bitnami/bitnami-docker-redis
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/redis-0.4.1.tgz
+    version: 0.4.1
+  - created: 2016-10-31T16:33:19.644247028Z
+    description: Chart for Redis
+    digest: cef59b98a3607bf0f40560c724fd36a84e5f29498031a36c0f2f80369c35d9c4
+    engine: gotpl
+    home: http://redis.io/
+    keywords:
+    - redis
+    - keyvalue
+    - database
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: redis
+    sources:
+    - https://github.com/bitnami/bitnami-docker-redis
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/redis-0.4.0.tgz
+    version: 0.4.0
+  redmine:
+  - created: 2016-11-23T18:48:21.101277724Z
+    description: A flexible project management web application.
+    digest: ae1c2ced129d05cdae28e1fe9c2bed53ded35cd77d96fc1b26f810d334c601e3
+    engine: gotpl
+    home: http://www.redmine.org/
+    keywords:
+    - redmine
+    - project management
+    - www
+    - http
+    - web
+    - application
+    - ruby
+    - rails
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: redmine
+    sources:
+    - https://github.com/bitnami/bitnami-docker-redmine
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/redmine-0.3.5.tgz
+    version: 0.3.5
+  - created: 2016-11-03T19:33:29.122956769Z
+    description: A flexible project management web application.
+    digest: c591dea135ef93f4af1a05961333125167ae551cf2b666363fe76b5a7ad9f806
+    engine: gotpl
+    home: http://www.redmine.org/
+    keywords:
+    - redmine
+    - project management
+    - www
+    - http
+    - web
+    - application
+    - ruby
+    - rails
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: redmine
+    sources:
+    - https://github.com/bitnami/bitnami-docker-redmine
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/redmine-0.3.4.tgz
+    version: 0.3.4
+  - created: 2016-10-21T19:18:18.621573514Z
+    description: A flexible project management web application.
+    digest: da6a8cb8c355a93ae11d9312be9eca51966d2288eafe96b6724e6154d000b8c3
+    engine: gotpl
+    home: http://www.redmine.org/
+    keywords:
+    - redmine
+    - project management
+    - www
+    - http
+    - web
+    - application
+    - ruby
+    - rails
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: redmine
+    sources:
+    - https://github.com/bitnami/bitnami-docker-redmine
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/redmine-0.3.3.tgz
+    version: 0.3.3
+  - created: 2016-10-19T00:03:14.035726608Z
+    description: A flexible project management web application.
+    digest: 052a0a97ff279db43f06c5ceeabfc5bd26f2e5f4f7ce7c24fdbcf761f97af84e
+    engine: gotpl
+    home: http://www.redmine.org/
+    keywords:
+    - redmine
+    - project management
+    - www
+    - http
+    - web
+    - application
+    - ruby
+    - rails
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: redmine
+    sources:
+    - https://github.com/bitnami/bitnami-docker-redmine
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/redmine-0.3.2.tgz
+    version: 0.3.2
+  - created: 2016-10-19T00:03:14.034750035Z
+    description: A flexible project management web application.
+    digest: 88cf358644be274866ec5e88199c257e18a35fc8bbe97417658b9a0ea1e4a260
+    engine: gotpl
+    home: http://www.redmine.org/
+    keywords:
+    - redmine
+    - project management
+    - www
+    - http
+    - web
+    - application
+    - ruby
+    - rails
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: redmine
+    sources:
+    - https://github.com/bitnami/bitnami-docker-redmine
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/redmine-0.3.1.tgz
+    version: 0.3.1
+  - created: 2016-10-19T00:03:14.033766322Z
+    description: A flexible project management web application.
+    digest: f4815d35cbf9f8bb72c051ee528958b9c6f48b1f3bf8b3fdceaadd90d1b88068
+    engine: gotpl
+    home: http://www.redmine.org/
+    keywords:
+    - redmine
+    - project management
+    - www
+    - http
+    - web
+    - application
+    - ruby
+    - rails
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: redmine
+    sources:
+    - https://github.com/bitnami/bitnami-docker-redmine
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/redmine-0.3.0.tgz
+    version: 0.3.0
+  spark:
+  - created: 2016-11-23T18:48:21.101731393Z
+    description: A Apache Spark Helm chart for Kubernetes. Apache Spark is a fast
+      and general-purpose cluster computing system
+    digest: 884cc07e4710011476db63017b48504cc00b00faf461cdfe83aac40f0fd33e49
+    home: http://spark.apache.org/
+    maintainers:
+    - email: lachlan.evenson@gmail.com
+      name: Lachlan Evenson
+    name: spark
+    sources:
+    - https://github.com/kubernetes/kubernetes/tree/master/examples/spark
+    - https://github.com/apache/spark
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/spark-0.1.1.tgz
+    version: 0.1.1
+  spartakus:
+  - created: 2016-11-23T18:48:21.102166649Z
+    description: A Spartakus Helm chart for Kubernetes. Spartakus aims to collect
+      information about Kubernetes clusters.
+    digest: 1c202628cd57e01cb324ee6e9457b52d1e1a5fd665f99d4bb25bd17c92c438e9
+    engine: gotpl
+    maintainers:
+    - email: mgoodness@gmail.com
+      name: Michael Goodness
+    name: spartakus
+    sources:
+    - https://github.com/kubernetes-incubator/spartakus
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/spartakus-1.0.0.tgz
+    version: 1.0.0
+  testlink:
+  - created: 2016-11-23T18:48:21.102841774Z
+    description: Web-based test management system that facilitates software quality
+      assurance.
+    digest: df216a31082cdf15867ee9a17b107e4006e9e0a20b79425889b695c4c46fb0c1
+    engine: gotpl
+    home: http://www.testlink.org/
+    keywords:
+    - testlink
+    - testing
+    - http
+    - php
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: testlink
+    sources:
+    - https://github.com/bitnami/bitnami-docker-testlink
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/testlink-0.4.0.tgz
+    version: 0.4.0
+  traefik:
+  - apiVersion: v1
+    created: 2016-11-23T00:33:20.024479934Z
+    description: A Traefik based Kubernetes ingress controller with Let's Encrypt
+      support
+    digest: 6664534aab03a22531602a415ca14a72e932b08fe1feab8866cc55ba18b77dc8
+    engine: gotpl
+    home: http://traefik.io/
+    icon: http://traefik.io/traefik.logo.png
+    keywords:
+    - traefik
+    - ingress
+    - acme
+    - letsencrypt
+    maintainers:
+    - email: engineering@deis.com
+      name: Deis
+    name: traefik
+    sources:
+    - https://github.com/containous/traefik
+    - https://github.com/krancour/charts/tree/master/traefik
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/traefik-1.1.0-rc3-a.tgz
+    version: 1.1.0-rc3-a
+  - apiVersion: v1
+    created: 2016-11-23T18:48:21.103367971Z
+    description: A Traefik based Kubernetes ingress controller with Let's Encrypt
+      support
+    digest: 2828d7284839baee1fb36f823ce4e2574a4b675b7f4f74e921a4685f4cee28c2
+    engine: gotpl
+    home: http://traefik.io/
+    icon: http://traefik.io/traefik.logo.png
+    keywords:
+    - traefik
+    - ingress
+    - acme
+    - letsencrypt
+    maintainers:
+    - email: engineering@deis.com
+      name: Deis
+    name: traefik
+    sources:
+    - https://github.com/containous/traefik
+    - https://github.com/krancour/charts/tree/master/traefik
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/traefik-1.1.0-a.tgz
+    version: 1.1.0-a
+  uchiwa:
+  - apiVersion: v1
+    created: 2016-11-23T18:48:21.103732392Z
+    description: Dashboard for the Sensu monitoring framework
+    digest: 2b48507b38adb17b1fce12d7284e5882629cc3db1a9489e9453827efcf328aea
+    engine: gotpl
+    home: https://uchiwa.io/
+    icon: https://uchiwa.io/img/favicon.png
+    keywords:
+    - uchiwa
+    - sensu
+    - monitoring
+    maintainers:
+    - email: shane.starcher@gmail.com
+      name: Shane Starcher
+    name: uchiwa
+    sources:
+    - https://github.com/kubernetes/charts
+    - https://github.com/sstarcher/docker-uchiwa
+    - https://github.com/sensu/uchiwa
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/uchiwa-0.1.0.tgz
+    version: 0.1.0
+  wordpress:
+  - created: 2016-11-23T18:48:21.105440551Z
+    description: Web publishing platform for building blogs and websites.
+    digest: 589e49370cb09f6d9ddb3ceba3b21f52697570cd4b40aff891a660c5daaa9bec
+    engine: gotpl
+    home: http://www.wordpress.com/
+    keywords:
+    - wordpress
+    - cms
+    - blog
+    - http
+    - web
+    - application
+    - php
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: wordpress
+    sources:
+    - https://github.com/bitnami/bitnami-docker-wordpress
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/wordpress-0.3.2.tgz
+    version: 0.3.2
+  - created: 2016-10-21T19:18:18.622178432Z
+    description: Web publishing platform for building blogs and websites.
+    digest: e70a072dcbb7252becc8899f54de8cb5977ceaea47197919c3990a6896adc350
+    engine: gotpl
+    home: http://www.wordpress.com/
+    keywords:
+    - wordpress
+    - cms
+    - blog
+    - http
+    - web
+    - application
+    - php
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: wordpress
+    sources:
+    - https://github.com/bitnami/bitnami-docker-wordpress
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/wordpress-0.3.1.tgz
+    version: 0.3.1
+  - created: 2016-10-19T00:03:14.037631856Z
+    description: Web publishing platform for building blogs and websites.
+    digest: 1c44515f02fb34b722dce1d8cf5fed0dfbbd2f8c03d63b335211b7bcb12b6dea
+    engine: gotpl
+    home: http://www.wordpress.com/
+    keywords:
+    - wordpress
+    - cms
+    - blog
+    - http
+    - web
+    - application
+    - php
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: wordpress
+    sources:
+    - https://github.com/bitnami/bitnami-docker-wordpress
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/wordpress-0.3.0.tgz
+    version: 0.3.0
+generated: 2016-11-23T18:48:21.089603168Z

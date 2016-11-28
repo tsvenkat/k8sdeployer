@@ -2,7 +2,7 @@
 
 # check if using Vagrant
 grep -q "^\s*use_vagrant:\s*yes" inventory.yml
-if [ $? -eq 0 ]; then
+if [ \( $? -eq 0 \) -a \( -f "$(which vagrant)" \) ]; then
   # check if vagrant up needs to be called
   vagrant status | grep "not created" -q
   [ $? -eq 0 ] && echo "Using vagrant to bring up VMs..." && vagrant up
@@ -14,6 +14,7 @@ fi
 # setup a docker container that abstracts the steps required to
 # setup a k8s cluster
 docker run -itd --name deployer -h DEPLOYER\
+       --network=host\
        -v /var/run/docker.sock:/var/run/docker.sock\
        -v `pwd`/docker-machine-conf:/root/.docker/machine\
        -v `pwd`/ssh_config:/root/.ssh\
