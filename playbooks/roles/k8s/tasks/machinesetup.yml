@@ -16,6 +16,14 @@
       mock: ""
   when: not proxy_info.use_proxy
 
+- name: setup apt proxy config
+  template:
+    src: "roles/k8s/templates/apt.conf.j2"
+    dest: /etc/apt/apt.conf
+    mode: 0644
+  become: yes
+  when: not proxy_info.use_proxy
+
 - name: setup docker machines (proxy)
   shell: 'docker-machine create -d generic  --generic-ip-address={{ ansible_ssh_host }} --generic-ssh-key ~/.ssh/id_rsa --generic-ssh-user {{ ssh_info.user }} --engine-env HTTP_PROXY="{{ proxy_info.http_proxy }}" --engine-env HTTPS_PROXY="{{ proxy_info.https_proxy }}" --engine-env NO_PROXY="{{ proxy_info.no_proxy }}"  {{ inventory_hostname }}'
   environment: "{{ proxy_env }}"

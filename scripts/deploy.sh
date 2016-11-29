@@ -72,7 +72,7 @@ helm install -n kibana fabric8/kibana
 helm install -n fluentd fabric8/fluentd
 
 # port forward the dashboard
-kubectl proxy --port=8081 &
+#kubectl proxy --port=8081 &
 
 # port forward the Elasticsearch and Kibana pods
 es_pod_name=$(kubectl get po -l project=elasticsearch -o=jsonpath='{.items[0].metadata.name}')
@@ -87,6 +87,12 @@ while [ $(kubectl get po $kibana_pod_name -o=jsonpath='{.status.phase}') != "Run
   echo "waiting for $kibana_pod_name to be running..."
   sleep 5
 done
+
+echo "Install prometheus from stable/prometheus after patching it to not wait for persistent storage"
+helm install stable/prometheus -n prometheus --set alertmanager.persistentVolume.enabled=false,server.persistentVolume.enabled=false
+
+# TODO: patch prometheus.yml to remote store metrics to weave cloud
+
 
 kubectl port-forward $es_pod_name 9200 &
 kubectl port-forward $kibana_pod_name 5601 &
