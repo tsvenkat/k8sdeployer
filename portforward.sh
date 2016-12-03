@@ -1,19 +1,24 @@
 #!/bin/sh
 
-echo  forward grafana port
-docker exec -itd deployer kubectl port-forward $(docker exec deployer kubectl get pod -l project=grafana -o=jsonpath='{.items..metadata.name}') 3000
+# make sure existing port forwards are killed first
+docker exec deployer bash -c 'pgrep "kubectl" | while read p; do kill $p; done'
 
-echo forward prometheus port
-docker exec -itd deployer kubectl port-forward $(docker exec deployer kubectl get pod -l project=prometheus -o=jsonpath='{.items..metadata.name}') 9090
+pf=""
+for e in grafana:3000 prometheus:9090 kibana:5601 elasticsearch:9200; do
+  s=$(echo $e | cut -d":" -f1)
+  p=$(echo $e | cut -d":" -f2)
+  echo Forwarding $s port $p
+  docker exec -itd deployer kubectl port-forward $(docker exec deployer kubectl get pod -l project=$s -o=jsonpath='{.items..metadata.name}') $p
 
-echo forward kibana port
-docker exec -itd deployer kubectl port-forward $(docker exec deployer kubectl get pod -l project=kibana -o=jsonpath='{.items..metadata.name}') 5601
+  # build the line to port forward
+  pf="$pf-L $p:localhost:$p "
+done
 
-echo forward elasticsearch port
-docker exec -itd deployer kubectl port-forward $(docker exec deployer kubectl get pod -l project=elasticsearch -o=jsonpath='{.items..metadata.name}') 9200
-
-echo forward dashboard port
+echo Forwarding dashboard port
 docker exec -itd deployer kubectl proxy
 
 echo "If you are running boot2docker, you may want to run the following from your host..."
-echo "docker-machine ssh <machine> -L 3000:localhost:3000 -L 9090:localhost:9090 -L 5601:localhost:5601 -L 9200:localhost:9200 -L 8001:localhost:8001"
+machine=$(docker-machine ls --filter state=running --filter driver=virtualbox -q)
+echo docker-machine ssh $machine $pf-L 8001:localhost:8001
+#echo "Ports forwarded. Ctrl+C when you are done..."
+#docker-machine ssh $machine $pf-L 8001:localhost:8001 read x
