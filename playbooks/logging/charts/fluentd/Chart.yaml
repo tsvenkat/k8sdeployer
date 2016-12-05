@@ -1,0 +1,12 @@
+---
+name: "fluentd"
+home: "http://fabric8.io/fluentd/"
+sources:
+- "http://github.com/fabric8io/fabric8-devops/fluentd"
+version: "2.2.297"
+description: "[Fluentd](http://www.fluentd.org/) is an open source data collector\
+  \ for unified logging layer."
+maintainers:
+- name: "Fabric8 Development Team"
+  email: "fabric8@googlegroups.com"
+icon: "https://cdn.rawgit.com/fabric8io/fabric8-devops/master/fluentd/src/main/fabric8/icon.png"

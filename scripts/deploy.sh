@@ -57,19 +57,24 @@ done
 
 sleep 5
 
+
 # get elasticsearch package
-helm fetch fabric8/elasticsearch --untar
-# patch it to not use the persistentVolumeClaim
-python -c "import yaml; d=yaml.load(open('./elasticsearch/templates/elasticsearch-deployment.yaml')); volume=d['spec']['template']['spec']['volumes'][0]; volume['emptyDir']={}; del volume['persistentVolumeClaim']; yaml.dump(d,open('./elasticsearch/templates/elasticsearch-deployment.yaml','w'),default_flow_style=False)"
+#helm fetch fabric8/elasticsearch --untar
+
+# patch elasticsearch to not use the persistentVolumeClaim
+python -c "import yaml; d=yaml.load(open('./logging/charts/elasticsearch/templates/elasticsearch-deployment.yaml')); volume=d['spec']['template']['spec']['volumes'][0]; volume['emptyDir']={}; del volume['persistentVolumeClaim']; yaml.dump(d,open('./logging/charts/elasticsearch/templates/elasticsearch-deployment.yaml','w'),default_flow_style=False)"
 
 # install the patched version
-helm install -n es ./elasticsearch
+#helm install -n es ./elasticsearch
 
 # install kibana for log visualization
-helm install -n kibana fabric8/kibana
+#helm install -n kibana fabric8/kibana
 
 # install fluentd for centralized logging
-helm install -n fluentd fabric8/fluentd
+#helm install -n fluentd fabric8/fluentd
+
+helm install -n logging logging
+
 
 # port forward the dashboard
 #kubectl proxy --port=8081 &

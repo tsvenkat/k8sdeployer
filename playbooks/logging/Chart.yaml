@@ -1,0 +1,4 @@
+apiVersion: v1
+description: Logging components for New Cloud Stack
+name: logging
+version: 0.1.0

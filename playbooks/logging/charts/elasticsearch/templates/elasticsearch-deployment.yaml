@@ -1,0 +1,77 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    fabric8.io/build-id: '4'
+    fabric8.io/build-url: http://jenkins.ux.fabric8.io/job/oss-parent/4
+    fabric8.io/git-branch: release-v2.2.297
+    fabric8.io/git-commit: 0958d61020835b9707536cc0525344fc30a764dd
+    fabric8.io/git-url: http://gogs.ux.fabric8.io/gogsadmin/oss-parent/commit/0958d61020835b9707536cc0525344fc30a764dd
+    fabric8.io/iconUrl: https://cdn.rawgit.com/fabric8io/fabric8-devops/master/elasticsearch/src/main/fabric8/icon.png
+    fabric8.io/metrics-path: dashboard/file/kubernetes-pods.json/?var-project=elasticsearch&var-version=2.2.297
+  labels:
+    group: io.fabric8.devops.apps
+    project: elasticsearch
+    provider: fabric8
+    version: 2.2.297
+  name: elasticsearch
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      group: io.fabric8.devops.apps
+      project: elasticsearch
+      provider: fabric8
+  template:
+    metadata:
+      annotations:
+        fabric8.io/build-id: '4'
+        fabric8.io/build-url: http://jenkins.ux.fabric8.io/job/oss-parent/4
+        fabric8.io/git-branch: release-v2.2.297
+        fabric8.io/git-commit: 0958d61020835b9707536cc0525344fc30a764dd
+        fabric8.io/git-url: http://gogs.ux.fabric8.io/gogsadmin/oss-parent/commit/0958d61020835b9707536cc0525344fc30a764dd
+        fabric8.io/iconUrl: https://cdn.rawgit.com/fabric8io/fabric8-devops/master/elasticsearch/src/main/fabric8/icon.png
+        fabric8.io/metrics-path: dashboard/file/kubernetes-pods.json/?var-project=elasticsearch&var-version=2.2.297
+        pod.alpha.kubernetes.io/init-containers: "[\n            {\n             \
+          \   \"name\": \"init\",\n                \"image\": \"busybox\",\n     \
+          \           \"command\": [\"chmod\", \"777\", \"/usr/share/elasticsearch/data\"\
+          ],\n                \"volumeMounts\": [\n                    {\n       \
+          \                 \"name\": \"data\",\n                        \"mountPath\"\
+          : \"/usr/share/elasticsearch/data\"\n                    }\n           \
+          \     ]\n            }\n        ]"
+      labels:
+        group: io.fabric8.devops.apps
+        project: elasticsearch
+        provider: fabric8
+        version: 2.2.297
+    spec:
+      containers:
+      - env:
+        - name: SERVICE
+          value: elasticsearch-masters
+        - name: KUBERNETES_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        image: fabric8/elasticsearch-k8s:2.3.4
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          initialDelaySeconds: 30
+          tcpSocket:
+            port: 9300
+        name: elasticsearch
+        readinessProbe:
+          httpGet:
+            path: /_template/logstash
+            port: 9200
+          initialDelaySeconds: 5
+        securityContext:
+          privileged: false
+        volumeMounts:
+        - mountPath: /usr/share/elasticsearch/data
+          name: data
+      - image: fabric8/elasticsearch-logstash-template:2.2.297
+        name: logstash-template
+      volumes:
+      - emptyDir: {}
+        name: data
