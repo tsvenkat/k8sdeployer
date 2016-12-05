@@ -3,8 +3,12 @@
 # delete the old local image
 #docker rmi localhost/k8sdeployer > /dev/null 2>&1
 
-# build the deployer image first
-docker build --build-arg http_proxy --build-arg https_proxy --build-arg no_proxy -t localhost/k8sdeployer .
+# uncomment to build the deployer image locally instead of pulling from docker hub
+#docker build --build-arg http_proxy --build-arg https_proxy --build-arg no_proxy -t localhost/k8sdeployer .
+
+# get image from docker hub and tag it. Comment these if you uncomment above line
+docker pull tsvenkat/k8sdeploy
+docker tag tsvenkat/k8sdeploy localhost/k8sdeployer
 
 # this files gets written to by the deployer
 # if the file doesn't exist, docker bind mount will treat it as a folder
