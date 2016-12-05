@@ -1,7 +1,7 @@
 apiVersion: v1
 entries:
   drupal:
-  - created: 2016-11-23T18:48:21.090418982Z
+  - created: 2016-12-02T09:03:20.175424724Z
     description: One of the most versatile open source content management systems.
     digest: 3596f47c5dcaa7a975d1c4cb7bf7ef6790c9ad8dda41a5a329e30c1ea8a40d11
     engine: gotpl
@@ -200,9 +200,9 @@ entries:
     - http://storage.googleapis.com/kubernetes-charts/drupal-0.3.0.tgz
     version: 0.3.0
   factorio:
-  - created: 2016-11-23T18:48:21.091095783Z
+  - created: 2016-12-02T09:03:20.175832035Z
     description: Factorio dedicated server.
-    digest: 7a9599d0fb1b252785b8cda9ccc4a4f2381986016918b87b1bd5e8c27e4efc4c
+    digest: 3cc1f83669fd1d97eb96e76ba4821e8664350a4c310d3a14e62be18cc09e59b7
     keywords:
     - game
     - server
@@ -231,7 +231,7 @@ entries:
     - http://storage.googleapis.com/kubernetes-charts/factorio-0.1.0.tgz
     version: 0.1.0
   ghost:
-  - created: 2016-11-23T18:48:21.092513663Z
+  - created: 2016-12-02T09:03:20.176548616Z
     description: A simple, powerful publishing platform that allows you to share your
       stories with the world
     digest: 804227af037082a0f5c3c579feb9e24eb3682449e78876971c93a109bc716f40
@@ -255,7 +255,7 @@ entries:
     - http://storage.googleapis.com/kubernetes-charts/ghost-0.4.0.tgz
     version: 0.4.0
   jenkins:
-  - created: 2016-11-23T18:48:21.092967075Z
+  - created: 2016-12-02T09:03:20.176985427Z
     description: A Jenkins Helm chart for Kubernetes.
     digest: 82b53a4c90ac2cf71bb41d870939ce1e980192e1407ba8825051c0ed98c04906
     home: https://jenkins.io/
@@ -290,7 +290,7 @@ entries:
     - http://storage.googleapis.com/kubernetes-charts/jenkins-0.1.0.tgz
     version: 0.1.0
   joomla:
-  - created: 2016-11-23T18:48:21.093618402Z
+  - created: 2016-12-02T09:03:20.177647889Z
     description: PHP content management system (CMS) for publishing web content
     digest: 0a01ea051ec15274932c8d82076c1a9fd62584b0fb916a81372319bef223c20e
     engine: gotpl
@@ -311,7 +311,7 @@ entries:
     - http://storage.googleapis.com/kubernetes-charts/joomla-0.4.0.tgz
     version: 0.4.0
   mariadb:
-  - created: 2016-11-23T18:48:21.094016671Z
+  - created: 2016-12-02T09:03:20.178834615Z
     description: Chart for MariaDB
     digest: c6b73c5146d085a202f838741526fe5fdc2fae55b8f5f17c0c42fd195c65311f
     engine: gotpl
@@ -464,7 +464,7 @@ entries:
     - http://storage.googleapis.com/kubernetes-charts/mariadb-0.3.0.tgz
     version: 0.3.0
   mediawiki:
-  - created: 2016-11-23T18:48:21.094706642Z
+  - created: 2016-12-02T09:03:20.180215134Z
     description: Extremely powerful, scalable software and a feature-rich wiki implementation
       that uses PHP to process and display data stored in a database.
     digest: 9617f13f51f5bb016a072f2a026c627420721a1c5b7cd22f32d6cd0c90f34eda
@@ -485,7 +485,7 @@ entries:
     - http://storage.googleapis.com/kubernetes-charts/mediawiki-0.4.0.tgz
     version: 0.4.0
   memcached:
-  - created: 2016-11-23T18:48:21.095022021Z
+  - created: 2016-12-02T09:03:20.180687353Z
     description: Chart for Memcached
     digest: 2b918dd8129a9d706e58b3de459004e3367c05a162d3e3cdb031cb6818d5f820
     engine: gotpl
@@ -503,7 +503,7 @@ entries:
     - http://storage.googleapis.com/kubernetes-charts/memcached-0.4.0.tgz
     version: 0.4.0
   minecraft:
-  - created: 2016-11-23T18:48:21.09551534Z
+  - created: 2016-12-02T09:03:20.181200143Z
     description: Minecraft server
     digest: 2cd423a28eb8a0186fba171cc17dcbe6f5a53d1a99e4078f9713afed3b61cce6
     keywords:
@@ -520,7 +520,7 @@ entries:
     - http://storage.googleapis.com/kubernetes-charts/minecraft-0.1.0.tgz
     version: 0.1.0
   mongodb:
-  - created: 2016-11-23T18:48:21.09592782Z
+  - created: 2016-12-02T09:03:20.181511415Z
     description: Chart for MongoDB
     digest: d5eabbe99b03b4f7f71c461580564e3d965c2602bfd1be4dd09f1c54c8e7e9db
     engine: gotpl
@@ -539,7 +539,7 @@ entries:
     - http://storage.googleapis.com/kubernetes-charts/mongodb-0.4.0.tgz
     version: 0.4.0
   mysql:
-  - created: 2016-11-23T18:48:21.096310666Z
+  - created: 2016-12-02T09:03:20.181877566Z
     description: Chart for MySQL
     digest: 3dd20c2ed2faf64b9f940e813b18d7fa1c18c1b86101de453c7c836940e05680
     engine: gotpl
@@ -635,7 +635,7 @@ entries:
     - http://storage.googleapis.com/kubernetes-charts/mysql-0.1.0.tgz
     version: 0.1.0
   owncloud:
-  - created: 2016-11-23T18:48:21.096781278Z
+  - created: 2016-12-02T09:03:20.182322679Z
     description: A file sharing server that puts the control and security of your
       own data back into your hands.
     digest: 7ec2dfe27bf42e8ee2e0672964decc2fbec94ec4fb60af2f3e9e91e13fdae08a
@@ -657,7 +657,7 @@ entries:
     - http://storage.googleapis.com/kubernetes-charts/owncloud-0.4.0.tgz
     version: 0.4.0
   phpbb:
-  - created: 2016-11-23T18:48:21.098895445Z
+  - created: 2016-12-02T09:03:20.182978962Z
     description: Community forum that supports the notion of users and groups, file
       attachments, full-text search, notifications and more.
     digest: 7e5e8828fdbba9ebc83c95baac4937e569e881d8b68bc79974a0f5d8a2883e13
@@ -678,9 +678,9 @@ entries:
     - http://storage.googleapis.com/kubernetes-charts/phpbb-0.4.0.tgz
     version: 0.4.0
   postgresql:
-  - created: 2016-11-23T18:48:21.099307439Z
+  - created: 2016-12-02T09:03:20.183296255Z
     description: Chart for PostgreSQL
-    digest: 194c52de318d03d4e3ffd91dd7ea9246d70e79c82169e108b54e729bfb2da750
+    digest: 713d7ee250af7f914188d889ba3cb3065b4c36565b6f68ca8f55cd5340bda213
     engine: gotpl
     home: https://www.postgresql.org/
     keywords:
@@ -736,10 +736,10 @@ entries:
     - http://storage.googleapis.com/kubernetes-charts/postgresql-0.1.0.tgz
     version: 0.1.0
   prometheus:
-  - created: 2016-11-23T18:48:21.099934321Z
+  - created: 2016-12-02T09:03:20.183894658Z
     description: A Prometheus Helm chart for Kubernetes. Prometheus is a monitoring
       system and time series database.
-    digest: bf41a211b83232c3121eee0c22f696eded0d61ce71d0813c8141a56e12ea6f74
+    digest: f6b4c948e408471b51ff6361e0d0f5afc801ee8141aae5002111ffbc12c68895
     engine: gotpl
     home: https://prometheus.io/
     maintainers:
@@ -753,10 +753,10 @@ entries:
     - http://storage.googleapis.com/kubernetes-charts/prometheus-1.3.1.tgz
     version: 1.3.1
   rabbitmq:
-  - created: 2016-11-23T18:48:21.100295967Z
+  - created: 2016-12-02T09:03:20.184258146Z
     description: Open source message broker software that implements the Advanced
       Message Queuing Protocol (AMQP)
-    digest: 1fd981e8c99ade1857844139d4177be6220b375adb37c3ce7737e92dc3ad0678
+    digest: 9bd9655f974dc3b2666c141718b65c7786e91c533ffee1784428a6d48cb458ca
     engine: gotpl
     home: https://www.rabbitmq.com
     keywords:
@@ -773,7 +773,7 @@ entries:
     - http://storage.googleapis.com/kubernetes-charts/rabbitmq-0.4.0.tgz
     version: 0.4.0
   redis:
-  - created: 2016-11-23T18:48:21.100612213Z
+  - created: 2016-12-02T09:03:20.18457431Z
     description: Chart for Redis
     digest: 7132d9ddecaf4a890e5177c401228fa031f52e927393063f8d6c5a0881b281a3
     engine: gotpl
@@ -810,7 +810,7 @@ entries:
     - http://storage.googleapis.com/kubernetes-charts/redis-0.4.0.tgz
     version: 0.4.0
   redmine:
-  - created: 2016-11-23T18:48:21.101277724Z
+  - created: 2016-12-02T09:03:20.186046079Z
     description: A flexible project management web application.
     digest: ae1c2ced129d05cdae28e1fe9c2bed53ded35cd77d96fc1b26f810d334c601e3
     engine: gotpl
@@ -949,7 +949,7 @@ entries:
     - http://storage.googleapis.com/kubernetes-charts/redmine-0.3.0.tgz
     version: 0.3.0
   spark:
-  - created: 2016-11-23T18:48:21.101731393Z
+  - created: 2016-12-02T09:03:20.186398008Z
     description: A Apache Spark Helm chart for Kubernetes. Apache Spark is a fast
       and general-purpose cluster computing system
     digest: 884cc07e4710011476db63017b48504cc00b00faf461cdfe83aac40f0fd33e49
@@ -965,7 +965,7 @@ entries:
     - http://storage.googleapis.com/kubernetes-charts/spark-0.1.1.tgz
     version: 0.1.1
   spartakus:
-  - created: 2016-11-23T18:48:21.102166649Z
+  - created: 2016-12-02T09:03:20.186655151Z
     description: A Spartakus Helm chart for Kubernetes. Spartakus aims to collect
       information about Kubernetes clusters.
     digest: 1c202628cd57e01cb324ee6e9457b52d1e1a5fd665f99d4bb25bd17c92c438e9
@@ -980,7 +980,7 @@ entries:
     - http://storage.googleapis.com/kubernetes-charts/spartakus-1.0.0.tgz
     version: 1.0.0
   testlink:
-  - created: 2016-11-23T18:48:21.102841774Z
+  - created: 2016-12-02T09:03:20.187288894Z
     description: Web-based test management system that facilitates software quality
       assurance.
     digest: df216a31082cdf15867ee9a17b107e4006e9e0a20b79425889b695c4c46fb0c1
@@ -1001,6 +1001,29 @@ entries:
     - http://storage.googleapis.com/kubernetes-charts/testlink-0.4.0.tgz
     version: 0.4.0
   traefik:
+  - apiVersion: v1
+    created: 2016-12-02T09:03:20.187801324Z
+    description: A Traefik based Kubernetes ingress controller with Let's Encrypt
+      support
+    digest: e8ab4576505091785b27084e4f4e4f02f1ee3f1744d9842ec086457baabe8b85
+    engine: gotpl
+    home: http://traefik.io/
+    icon: http://traefik.io/traefik.logo.png
+    keywords:
+    - traefik
+    - ingress
+    - acme
+    - letsencrypt
+    maintainers:
+    - email: engineering@deis.com
+      name: Deis
+    name: traefik
+    sources:
+    - https://github.com/containous/traefik
+    - https://github.com/krancour/charts/tree/master/traefik
+    urls:
+    - http://storage.googleapis.com/kubernetes-charts/traefik-1.1.1-a.tgz
+    version: 1.1.1-a
   - apiVersion: v1
     created: 2016-11-23T00:33:20.024479934Z
     description: A Traefik based Kubernetes ingress controller with Let's Encrypt
@@ -1025,7 +1048,7 @@ entries:
     - http://storage.googleapis.com/kubernetes-charts/traefik-1.1.0-rc3-a.tgz
     version: 1.1.0-rc3-a
   - apiVersion: v1
-    created: 2016-11-23T18:48:21.103367971Z
+    created: 2016-11-30T22:03:20.721274307Z
     description: A Traefik based Kubernetes ingress controller with Let's Encrypt
       support
     digest: 2828d7284839baee1fb36f823ce4e2574a4b675b7f4f74e921a4685f4cee28c2
@@ -1049,7 +1072,7 @@ entries:
     version: 1.1.0-a
   uchiwa:
   - apiVersion: v1
-    created: 2016-11-23T18:48:21.103732392Z
+    created: 2016-12-02T09:03:20.188137236Z
     description: Dashboard for the Sensu monitoring framework
     digest: 2b48507b38adb17b1fce12d7284e5882629cc3db1a9489e9453827efcf328aea
     engine: gotpl
@@ -1071,7 +1094,7 @@ entries:
     - http://storage.googleapis.com/kubernetes-charts/uchiwa-0.1.0.tgz
     version: 0.1.0
   wordpress:
-  - created: 2016-11-23T18:48:21.105440551Z
+  - created: 2016-12-02T09:03:20.188848723Z
     description: Web publishing platform for building blogs and websites.
     digest: 589e49370cb09f6d9ddb3ceba3b21f52697570cd4b40aff891a660c5daaa9bec
     engine: gotpl
@@ -1137,4 +1160,4 @@ entries:
     urls:
     - http://storage.googleapis.com/kubernetes-charts/wordpress-0.3.0.tgz
     version: 0.3.0
-generated: 2016-11-23T18:48:21.089603168Z
+generated: 2016-12-02T09:03:20.174472558Z

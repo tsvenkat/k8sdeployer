@@ -3,3 +3,8 @@
 env.dat
 inventory.dat
 ssh_config/
+
+helm_repo/**/*
+inventory.yml
+*.retry
+kubelet.conf
