@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# Copy inventory.yml.example to inventory.yml if needed
+if [ ! -f inventory.yml ]; then
+  cp inventory.yml.example inventory.yml
+fi
+
 # check if using Vagrant
 grep -q "^\s*use_vagrant:\s*yes" inventory.yml
 if [ \( $? -eq 0 \) -a \( -f "$(which vagrant)" \) ]; then
