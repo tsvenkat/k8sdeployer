@@ -2,18 +2,19 @@ ssh_info:
   user: vagrant
 
 proxy_info:
-  use_proxy: yes
-  http_proxy: http://web-proxy.fc.hp.com:8080/
-  https_proxy: http://web-proxy.fc.hp.com:8080/
+  use_proxy: no
+  http_proxy: http://<proxy>:<port>/
+  https_proxy: http://<proxy>:<port>/
   no_proxy: localhost,172.28.128.20,172.28.128.21,172.28.128.22,172.28.128.23
 
 k8s_info:
   version: v1.4.4
   token: feb8f9.235133303fa01dff
   network_adapter_url: https://git.io/weave-kube
+  weave_token: z9arcn73gdp5kdtmsbmmfoy4mfgo5gb1
 
 machines:
-  use_vagrant: yes 
+  use_vagrant: yes
   # TODO: add support for multiple masters
   master:
     name: master
